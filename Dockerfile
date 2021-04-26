@@ -1,6 +1,6 @@
 FROM tomcat:latest
 
-COPY /target/web.war /usr/local/tomcat/webapps/web.war
+COPY /target/web.war /usr/local/tomcat/webapps/testsceduler.war
 
 WORKDIR /usr/local/tomcat/webapps/
 
