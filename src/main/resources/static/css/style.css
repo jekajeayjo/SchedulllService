@@ -1,0 +1,92 @@
+
+p {
+    color: #8a6d3b;
+}
+
+
+
+label {
+    color: #8a6d3b;
+}
+
+/*.coll-center {*/
+/*    margin-left: 23em;*/
+/*}*/
+
+/*.coll-center1 {*/
+/*    padding-top: 1em;*/
+/*    margin-left: 30em;*/
+/*}*/
+
+.autorization {
+    margin-top: 10em;
+    background-color: #F5C116;
+    /*background-image: url("/images/autorizat.jpeg");*/
+    /*border: 6px solid #7922CC;*/
+    border-radius: 25px;
+}
+
+.autorization-text
+{
+    color: black;
+}
+.main{
+
+    background-color: #2F3245;
+}
+.out
+{
+    color: red;
+}
+.autorization-form
+{
+    background: linear-gradient(334.3deg, #FFD300 41.35%, #FFEE15 100%);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    /*transform: matrix(0,-1,-1,0,0,0);*/
+
+}
+.autorization-header
+{
+
+
+
+    font-family: PF DinDisplay Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+.autorization-input
+{
+    width: 61px;
+    height: 473px;
+    background: #FFFFFF;
+    border-radius: 10px;
+
+}
+.autorization-input{
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+
+}
+.white{
+    background: black;
+}
+.autorization-btn
+{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.autorization-input
+{
+    border-left:none !important;
+}
