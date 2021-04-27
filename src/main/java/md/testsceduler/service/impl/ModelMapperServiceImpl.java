@@ -53,7 +53,7 @@ public class ModelMapperServiceImpl implements ModelMapperService {
         {
             if (key != null || key != "") {
                 if (key=="id"||key.equals("id")) {
-                    paymentEntity.setId((String) value);
+                    paymentEntity.setTransactionId((String) value);
                 }
                 else if (key.equals("ts"))
                 {

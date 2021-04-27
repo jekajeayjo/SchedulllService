@@ -52,6 +52,7 @@
             dialog: false,
             headers: [
                 { text: 'Идентификатор',align: 'start',sortable: false, value: 'id', },
+                { text: 'Номер тразакции',sortable: false, value: 'transactionId', },
                 { text: 'Статус транзакции', value: 'payload' },
                 { text: 'Дата', value: 'ts' },
                 { text: '', value: 'ty' },

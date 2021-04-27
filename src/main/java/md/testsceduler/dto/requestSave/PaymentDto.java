@@ -9,15 +9,18 @@ import java.util.Queue;
 
 public class PaymentDto {
     private BigDecimal id;
+    private  BigDecimal transactionId;
     private String ts;
     private String ty;
     private String payload;
+
 
     public PaymentDto() {
     }
 
     public PaymentDto(PaymentEntity entity) {
         setId(entity.getId());
+        setTransactionId(entity.getTransactionId());
         setPayload(entity.getPayload());
         setTs(entity.getDate().toString());
         setTy(entity.getName());
@@ -59,5 +62,13 @@ public class PaymentDto {
 
     public void setPayload(String payload) {
         this.payload = payload;
+    }
+
+    public BigDecimal getTransactionId() {
+        return transactionId;
+    }
+
+    public void setTransactionId(BigDecimal transactionId) {
+        this.transactionId = transactionId;
     }
 }
