@@ -15,6 +15,9 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadPoolExecutor;
 
 @Service("scheduleTest")
 @EnableScheduling
@@ -56,20 +59,31 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Scheduled(fixedRate = 60000)
     public void scheduleSave() {
         logger.info("start sync");
+        ThreadPoolExecutor executor =
+                (ThreadPoolExecutor) Executors.newCachedThreadPool();
 
         for (Object bid : modelMapperService.fromStringToList(fileService.readFile())) {
             Map<String, Map> map = (Map) bid;
-            Runnable runnable = new Runnable() {
-                @Override
-                public void run() {
-                    for (Map.Entry<String, Map> entry : map.entrySet()) {
 
+            executor.submit(() -> {
+                System.out.println("start");
+                for (Map.Entry<String, Map> entry : map.entrySet()) {
                         PaymentEntity paymentEntity = modelMapperService.FromMapToEntity(entry.getValue());
                         paymentRepository.save(paymentEntity);
                     }
-                }
-            };
-            runnable.run();
+            });
+
+//            Runnable runnable = new Runnable() {
+//                @Override
+//                public void run() {
+//                    for (Map.Entry<String, Map> entry : map.entrySet()) {
+//
+//                        PaymentEntity paymentEntity = modelMapperService.FromMapToEntity(entry.getValue());
+//                        paymentRepository.save(paymentEntity);
+//                    }
+//                }
+//            };
+//            runnable.run();
         }
     }
 
